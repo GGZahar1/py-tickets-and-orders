@@ -36,7 +36,7 @@ class Movie(models.Model):
 
 class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
-    user = models.ForeignKey("User", on_delete=models.CASCADE)
+    user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="tickets")
 
     class Meta:
         ordering = ["-created_at"]
